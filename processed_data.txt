@@ -1,0 +1,73 @@
+[
+    {
+        "frame_id": 100,
+        "timestamp": "2024-12-17 20:45:05.402682",
+        "frame_file": "frame_100.jpg",
+        "description": "The image shows a person with a full beard wearing a white t-shirt with a black and white striped design on the front. They have short black hair and are wearing a pair of dark-rimmed glasses with noticeable dark frames around each eye and nose. The background features a white wall with a simple, modern design complemented by a framed painting or poster hanging on it behind the person facing the camera directly towards the viewer's right sidefaker. The person appears to be sitting on a white or light-colored sofa, and the overall setting gives off a clean and contemporary feel.",
+        "detections": [
+            {
+                "label": "person",
+                "confidence_score": 0.7194070816040039,
+                "bounding_box": {
+                    "x": 85,
+                    "y": 119,
+                    "width": 575,
+                    "height": 378
+                },
+                "priority": "urgent"
+            }
+        ]
+    },
+    {
+        "frame_id": 200,
+        "timestamp": "2024-12-17 20:45:16.109164",
+        "frame_file": "frame_200.jpg",
+        "description": "In this image, a man is holding a landline phone close to his mouth while taking a phone call indoorsihar. He has a beard and is wearing a striped shirt with buttons revealing an adjustable watch strap around his wrist/socket button and with a picture frame showing a white modern and industrial background with an undercoat of glass and the window in a wooden unit with two l'.b. a. and. per. l' and. of. and. l. to. of. and.  and.  and.  and.  and. and. to. and. to. to. and. and. with. and.  and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. , and. and. and. and. on. a. and. to. and. and.work. and. m. and. s. and.  and. that. and. and. and. and. and. a. and. and. and. and. and. and. and. and. and. and. and. and. and. and.work. and. m. and. s. and. against. and.s. and. and. and. and. and. and. and. and. and. and. and. and. and.src. and. and. and. and.work. and. m. and. s. and. on. a. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and sun. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and. and",
+        "detections": []
+    },
+    {
+        "frame_id": 300,
+        "timestamp": "2024-12-17 20:45:24.866420",
+        "frame_file": "frame_300.jpg",
+        "description": "The image shows a person seated indoors against a white wall. The background features a framed painting on the wall, which appears to be an abstract or impressionistic style with earthy tones. The room has a neutral color scheme and appears to be in a part of a home or a study room due to the seating arrangement near a window or corner. The person is checking their glasses with both hands, and the image is taken from a close-up perspective that captures both the subject's face and a part of their outfit consisting of a white shirt with some small patterns or stripes visible along the neckline and lower part of the shirt sleeve asymmetric lines on the right side of the chest probably the right sleeve. Additionally, a red stretch bracelet is seen on one wrist which lays on the arm, and two fingers of the hand that is in the process of adjusting the glasses are in the view close-up with a steak of one hand shown close next to the other hand in the other hand.",
+        "detections": [
+            {
+                "label": "person",
+                "confidence_score": 0.6835185289382935,
+                "bounding_box": {
+                    "x": 114,
+                    "y": 146,
+                    "width": 509,
+                    "height": 331
+                },
+                "priority": "urgent"
+            }
+        ]
+    },
+    {
+        "frame_id": 400,
+        "timestamp": "2024-12-17 20:45:35.609393",
+        "frame_file": "frame_400.jpg",
+        "description": "The image shows a person holding up a pair of eyeglasses with both hands above their eyes, close to their face but not on their face itself because of the way they are holding them vertically over their in-ane. The person is wearing a white T-shirt with blue and white stripes on the sleeves and a red armband on the left arm with a composition or design on it near the wrist. \n\nAdditionallyexual of noticeable featurestheses and is a white electronic device that appears to be a wristwatch on the right wrist of the person at the lower right side of the frame at about the forearm level area.but details of this watch is not clear in the image.The flow, or direction is accent. In the background yourself on the wall the image. Without in full of the. that. No. . is more. . the picture is. the. and in. other of. of. of, and in width and in and in and in and in width. in and in and in and in and in and in and in and in and in and in and in. in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and in and",
+        "detections": [
+            {
+                "label": "person",
+                "confidence_score": 0.6511102914810181,
+                "bounding_box": {
+                    "x": 59,
+                    "y": 135,
+                    "width": 522,
+                    "height": 345
+                },
+                "priority": "urgent"
+            }
+        ]
+    },
+    {
+        "frame_id": 500,
+        "timestamp": "2024-12-17 20:45:43.966633",
+        "frame_file": "frame_500.jpg",
+        "description": "The image shows a person in a white shirt with black and blue vertical stripes on the front part of the shirt. The person is holding glasses with both of their hands above their head while at the same time placing their left hand on their head and the watch on their right wrist above their heart line visible. There appears to be a painting or picture behind them on the wall next to the window or a pane of glass k\u00ea. The overall setting seems to be indoors with natural light coming through the window pane on which the person's face and the shelf with the glass on which the picture is attached can be seen clearlyosaur.",
+        "detections": []
+    }
+]
