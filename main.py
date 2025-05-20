@@ -8,7 +8,7 @@ import os
 from huggingface_hub import InferenceClient
 
 # Initialize Hugging Face API client
-client = InferenceClient(api_key="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")
+client = InferenceClient(token="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")
 
 # Logging setup
 logging.basicConfig(level=logging.INFO)
@@ -57,12 +57,11 @@ def detect_objects(frame):
 
     boxes, confidences, class_ids = [], [], []
 
-    # Parse YOLO output
     for output in outputs:
         for detection in output:
             scores = detection[5:]
-            class_id = int(np.argmax(scores))  # Convert np.int64 to native int
-            confidence = float(scores[class_id])  # Convert np.float32 to native float
+            class_id = int(np.argmax(scores))
+            confidence = float(scores[class_id])
             if confidence > 0.5:
                 center_x, center_y, w, h = (detection[0:4] * [width, height, width, height]).astype("int")
                 x = int(center_x - w / 2)
@@ -71,7 +70,6 @@ def detect_objects(frame):
                 confidences.append(confidence)
                 class_ids.append(class_id)
 
-    # Apply Non-Maximum Suppression (NMS)
     indices = cv2.dnn.NMSBoxes(boxes, confidences, 0.5, 0.4)
     detections = []
 
@@ -80,10 +78,8 @@ def detect_objects(frame):
             x, y, w, h = boxes[i]
             label = f"{class_names[class_ids[i]]} {confidences[i]:.2f}"
             color = (0, 255, 0)
-            # Draw bounding boxes and labels
             cv2.rectangle(frame, (x, y), (x + w, y + h), color, 2)
             cv2.putText(frame, label, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
-
             detections.append({
                 "label": class_names[class_ids[i]],
                 "confidence_score": confidences[i],
@@ -93,7 +89,6 @@ def detect_objects(frame):
     return frame, detections
 
 
-# Process frame with Qwen API
 def process_frame_with_qwen(frame):
     _, buffer = cv2.imencode('.jpg', frame)
     base64_image = base64.b64encode(buffer).decode('utf-8')
@@ -120,7 +115,6 @@ def process_frame_with_qwen(frame):
     return None
 
 
-# Save frame to disk and return file name
 def save_frame(frame, frame_id):
     frame_name = f"frame_{frame_id}.jpg"
     frame_path = os.path.join(FRAMES_DIR, frame_name)
@@ -128,11 +122,23 @@ def save_frame(frame, frame_id):
     return frame_name
 
 
-# Main pipeline
+# Attempts to find a working camera backend
+def get_working_camera():
+    backends = [cv2.CAP_ANY, cv2.CAP_QT, cv2.CAP_AVFOUNDATION, cv2.CAP_FFMPEG]
+    for backend in backends:
+        logging.info(f"Trying backend: {backend}")
+        cap = cv2.VideoCapture(0, backend)
+        if cap.isOpened():
+            logging.info(f"Using camera index: 0")
+            return cap
+        cap.release()
+    return None
+
+
 def main_pipeline():
-    video = cv2.VideoCapture(0)
-    if not video.isOpened():
-        logging.error("Error: Cannot access the video source.")
+    video = get_working_camera()
+    if video is None:
+        logging.error("No accessible camera found. Ensure camera permissions are granted.")
         return
 
     prev_frame = None
@@ -147,21 +153,17 @@ def main_pipeline():
             logging.error("Error: Invalid frame received from video source.")
             break
 
-        # Detect motion
         motion_detected, _ = detect_motion(frame, prev_frame)
         prev_frame = frame.copy()
 
-        # Track sharpest frame if motion is detected
         if motion_detected:
             sharpness = evaluate_sharpness(frame)
             if sharpness > best_sharpness:
                 best_sharpness = sharpness
                 best_frame = frame.copy()
 
-        # Detect and annotate objects
         annotated_frame, detections = detect_objects(frame)
 
-        # Save the best frame every 100 frames
         if frame_count % 100 == 0 and best_frame is not None:
             frame_file = save_frame(best_frame, frame_count)
             description = process_frame_with_qwen(best_frame)
@@ -177,17 +179,14 @@ def main_pipeline():
             best_frame = None
             best_sharpness = 0
 
-        # Display video stream
         cv2.imshow("Video Stream with Bounding Boxes", annotated_frame)
 
-        # Exit on 'q' key press
         if cv2.waitKey(1) & 0xFF == ord('q'):
             logging.info("Exiting the video stream.")
             break
 
         frame_count += 1
 
-    # Save all collected data to a txt file
     with open("processed_data.txt", "w") as file:
         json.dump(all_frame_data, file, indent=4)
 
