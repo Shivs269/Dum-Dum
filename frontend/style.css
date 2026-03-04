@@ -1,0 +1,99 @@
+/* ---------- GLOBAL ---------- */
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: radial-gradient(circle at top, #0b0f17, #020409);
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* ---------- MAIN CONTAINER ---------- */
+
+.container {
+    margin-top: 40px;
+}
+
+/* ---------- TITLE ---------- */
+
+.title {
+    font-size: 34px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+/* ---------- CAMERA CARD ---------- */
+
+.camera-card {
+    position: relative;
+    width: 420px;
+    margin: auto;
+    padding: 12px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+}
+
+/* ---------- VIDEO ---------- */
+
+#video {
+    width: 100%;
+    border-radius: 14px;
+    display: block;
+}
+
+/* ---------- CANVAS OVERLAY ---------- */
+
+#overlay {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: calc(100% - 24px);
+    height: calc(100% - 24px);
+    pointer-events: none;
+}
+
+/* ---------- RESULT CARD ---------- */
+
+.result-card {
+    margin: 25px auto;
+    width: 420px;
+    padding: 20px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------- RESULT TEXT ---------- */
+
+#description {
+    font-size: 18px;
+    opacity: 0.9;
+    margin-top: 10px;
+}
+
+/* ---------- SUBTITLE ---------- */
+
+.result-card h2 {
+    margin-bottom: 10px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 500px) {
+
+    .camera-card,
+    .result-card {
+        width: 90%;
+    }
+
+    .title {
+        font-size: 26px;
+    }
+}

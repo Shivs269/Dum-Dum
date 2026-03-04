@@ -1,0 +1,17 @@
+# Core libraries
+numpy==1.24.3
+opencv-python==4.8.0.76
+opencv-contrib-python==4.8.0.76  # For additional OpenCV features, if needed
+huggingface-hub==0.18.0
+
+# YOLO Models
+yolov4-tiny==0.1  # Placeholder for YOLOv4-Tiny dependencies (refer to documentation for pre-trained weights)
+
+# Logging and debugging
+logging==0.5.1.2  # Python logging is inbuilt, placeholder for advanced logging, if used
+
+# Cryptography (Optional if you introduce encryption in border-related projects)
+pycryptodome==3.17  # AES encryption can use this library if needed
+
+# Environment and runtime tools
+os-sys==0.1.5  # Used if importing settings 파일-level paralell. File SRT-> try red-map

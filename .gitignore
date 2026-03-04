@@ -1,0 +1,11 @@
+*.pt
+*.weights
+__pycache__/
+frames/
+*.jpg
+*.jpeg
+*.png
+*.mp4
+*.avi
+pipeline.log
+.DS_Store

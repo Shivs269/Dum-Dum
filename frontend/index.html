@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Threat Detection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1 class="title">Threat Detection System</h1>
+
+        <div class="camera-card">
+            <!-- Live Camera Feed -->
+            <video id="video" autoplay playsinline></video>
+
+            <!-- Bounding Box Overlay -->
+            <canvas id="overlay"></canvas>
+        </div>
+
+        <div class="result-card">
+            <h2>Detection Results</h2>
+            <p id="description">Waiting for analysis...</p>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
